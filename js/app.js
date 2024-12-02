@@ -37,7 +37,7 @@ $(document).ready(function () {
     loop: true,
     dots: false,
     nav: true,
-    margin:10,
+    margin: 10,
     navText: [
       '<i class="fa-solid fa-chevron-left"></i>',
       '<i class="fa-solid fa-chevron-right"></i>',
@@ -65,5 +65,54 @@ function toggleAccordion(element) {
     parentItem.querySelector('.accordion-title').classList.add('open');
   }
 }
+
+
 // aos
 AOS.init();
+
+
+// banner two image animation
+
+document.addEventListener("DOMContentLoaded", () => {
+  const bannerImg = document.querySelector(".banner_two img");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          bannerImg.style.animation = "none";
+          setTimeout(() => {
+            bannerImg.style.animation =
+              "banner-two-animation 2s linear 1";
+          }, 0);
+        } else {
+
+          bannerImg.style.animation = "none";
+        }
+      });
+    },
+    {
+      threshold: 0.5,
+    }
+  );
+
+  observer.observe(bannerImg);
+});
+
+
+// swiper js
+document.addEventListener("DOMContentLoaded", () => {
+  const swiper = new Swiper(".swiper", {
+    direction: "vertical", // Horizontal sliding (default)
+    mousewheel: true,    
+
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    autoplay: {
+      delay: 3000, // Auto slide every 3 seconds
+      disableOnInteraction: false,
+    },
+  });
+});
