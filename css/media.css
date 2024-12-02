@@ -41,6 +41,24 @@
   }
 }
 
+@media screen and (max-width:1600px) {
+  .banner_title {
+    font-size: 160px;
+  }
+
+  .banner-image img:first-child {
+    left: 95px;
+    max-width: 400px;
+  }
+
+  .banner-image img:last-child {
+    top: -65px;
+    right: 85px;
+    max-width: 400px;
+
+  }
+}
+
 
 /* ------------------------------ */
 
